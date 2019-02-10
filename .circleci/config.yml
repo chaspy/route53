@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: ruby:2.6.1
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-bundle-{{ checksum "Gemfile.lock" }}
+            - v1-bundle-
+      - run:
+          command: bundle check --path=vendor/bundle || bundle install --clean --path=vendor/bundle --jobs=4 --retry=3
+          no_output_timeout: 30m
+      - save_cache:
+          key: v1-bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - ~/project/vendor/bundle
+      - run:
+          name: Test
+          command: bundle exec roadwork --apply --dry-run
+      - deploy:
+          name: Deploy only master
+          command: |
+            if [[ $CIRCLE_BRANCH = "master" ]]; then
+              bundle exec roadwork --apply
+            fi
