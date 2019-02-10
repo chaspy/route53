@@ -1,0 +1,167 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+hosted_zone "toketenakunaru.com." do
+  rrset "toketenakunaru.com.", "A" do
+    dns_name "d1gpqcjfhptl57.cloudfront.net."
+  end
+
+  rrset "toketenakunaru.com.", "MX" do
+    ttl 300
+    resource_records(
+      "10 inbound-smtp.us-east-1.amazonaws.com"
+    )
+  end
+
+  rrset "_amazonses.toketenakunaru.com.", "TXT" do
+    ttl 1800
+    resource_records(
+      "\"lXXFHYm2RH9PlRDTp2sjbaqINnrigipTCUHpY8bc5bk=\"",
+      "\"/5fibXJ5MzgEwr8OUPEzvAOz1JPjRKTPd70NEmgNAXQ=\""
+    )
+  end
+
+  rrset "adyzhoummfu5agkhf5gfqn4drra3fxcc._domainkey.toketenakunaru.com.", "CNAME" do
+    ttl 1800
+    resource_records(
+      "adyzhoummfu5agkhf5gfqn4drra3fxcc.dkim.amazonses.com"
+    )
+  end
+
+  rrset "tcdvsp7q4yzxkbmxhsqfuojst23oixdl._domainkey.toketenakunaru.com.", "CNAME" do
+    ttl 1800
+    resource_records(
+      "tcdvsp7q4yzxkbmxhsqfuojst23oixdl.dkim.amazonses.com"
+    )
+  end
+
+  rrset "yfew437xyx54endjtzp7mnjnuxyrdyov._domainkey.toketenakunaru.com.", "CNAME" do
+    ttl 1800
+    resource_records(
+      "yfew437xyx54endjtzp7mnjnuxyrdyov.dkim.amazonses.com"
+    )
+  end
+
+  rrset "diary.toketenakunaru.com.", "CNAME" do
+    ttl 300
+    resource_records(
+      "users302.jg.jugem.jp"
+    )
+  end
+
+  rrset "img.diary.toketenakunaru.com.", "CNAME" do
+    ttl 300
+    resource_records(
+      "users302.jg.jugem.jp"
+    )
+  end
+end
+
+hosted_zone "catferie.com." do
+  rrset "catferie.com.", "A" do
+    dns_name "d84e6j4azjhqw.cloudfront.net."
+  end
+
+  rrset "catferie.com.", "MX" do
+    ttl 1800
+    resource_records(
+      "10 inbound-smtp.us-east-1.amazonaws.com"
+    )
+  end
+
+  rrset "_amazonses.catferie.com.", "TXT" do
+    ttl 1800
+    resource_records(
+      "\"YdB3/A1ykFcCSoVJsTtgo1yvilUGvoZxoVGF9i0cOdM=\""
+    )
+  end
+
+  rrset "afp4ovr7nhtyyc2zzact6ct4dmiotek2._domainkey.catferie.com.", "CNAME" do
+    ttl 1800
+    resource_records(
+      "afp4ovr7nhtyyc2zzact6ct4dmiotek2.dkim.amazonses.com"
+    )
+  end
+
+  rrset "geyurl6lr6w2ltdmorvbg325ffypooob._domainkey.catferie.com.", "CNAME" do
+    ttl 1800
+    resource_records(
+      "geyurl6lr6w2ltdmorvbg325ffypooob.dkim.amazonses.com"
+    )
+  end
+
+  rrset "zamk6lqvc5sh3vsr7h2xn7n6tout5c3u._domainkey.catferie.com.", "CNAME" do
+    ttl 1800
+    resource_records(
+      "zamk6lqvc5sh3vsr7h2xn7n6tout5c3u.dkim.amazonses.com"
+    )
+  end
+
+  rrset "blog.catferie.com.", "CNAME" do
+    ttl 300
+    resource_records(
+      "hatenablog.com."
+    )
+  end
+end
+
+hosted_zone "chaspy.me." do
+  rrset "chaspy.me.", "A" do
+    ttl 300
+    resource_records(
+      "185.199.109.153",
+      "185.199.108.153",
+      "185.199.110.153",
+      "185.199.111.153"
+    )
+  end
+
+  rrset "bench.chaspy.me.", "A" do
+    ttl 60
+    resource_records(
+      "118.27.3.54"
+    )
+  end
+
+  rrset "blog.chaspy.me.", "CNAME" do
+    ttl 300
+    resource_records(
+      "hatenablog.com."
+    )
+  end
+
+  rrset "favsearch.chaspy.me.", "CNAME" do
+    ttl 60
+    resource_records(
+      "lively-dolphin-ni4ta9ya4bpub83vm50toofs.herokudns.com"
+    )
+  end
+
+  rrset "server.chaspy.me.", "A" do
+    ttl 60
+    resource_records(
+      "118.27.5.26"
+    )
+  end
+
+  rrset "voice-actress-life.chaspy.me.", "A" do
+    ttl 300
+    resource_records(
+      "52.198.127.204"
+    )
+  end
+end
+
+hosted_zone "web-nginx.tk." do
+  rrset "web-nginx.tk.", "A" do
+    ttl 300
+    resource_records(
+      "13.231.244.45"
+    )
+  end
+end
+
+hosted_zone "local.", "Z3M2JZLRUMF8M9" do
+  vpc "ap-northeast-1", "vpc-02cc38ba1fcdd3632"
+
+
+end
