@@ -136,6 +136,13 @@ hosted_zone "chaspy.me." do
     )
   end
 
+  rrset "ask.chaspy.me.", "CNAME" do
+    ttl 60
+    resource_records(
+      "hidden-indominus-jwhpcf727lm05ko9khrqy1z1.herokudns.com"
+    )
+  end
+
   rrset "server.chaspy.me.", "A" do
     ttl 60
     resource_records(
